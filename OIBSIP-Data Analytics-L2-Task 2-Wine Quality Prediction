@@ -1,1 +1,274 @@
+# 🍷 Wine Quality Prediction Using Machine Learning
 
+## 📌 Project Overview
+
+This project focuses on predicting wine quality using Machine Learning classification algorithms. The analysis is performed on the Red Wine Quality dataset, which contains different physicochemical properties of red wine.
+
+The project involves data exploration, statistical analysis, data visualization, quality categorization, model training, prediction, and performance evaluation.
+
+Three Machine Learning algorithms are implemented and compared to identify the best-performing model for wine quality classification.
+
+This project is completed as part of the **Oasis Infobyte Internship (OIBSIP) – Data Analytics, Level 2, Task 2**.
+
+## 🎯 Project Objectives
+
+- Understand and explore the Red Wine Quality dataset.
+- Perform data inspection and statistical analysis.
+- Analyze the distribution of wine quality scores.
+- Identify relationships between chemical properties and wine quality.
+- Visualize feature distributions and correlations.
+- Convert numerical quality scores into Low, Medium, and High categories.
+- Train multiple Machine Learning classification models.
+- Evaluate and compare model performance.
+- Identify the best-performing classification algorithm.
+
+## 📂 Dataset Information
+
+**Dataset Name:** `winequality-red.csv`
+
+**Dataset Size:** 1,599 rows and 12 columns.
+
+The dataset contains physicochemical properties of red wine and its corresponding quality score.
+
+### Dataset Features
+
+| Feature | Description |
+|---|---|
+| fixed acidity | Amount of fixed acids in wine |
+| volatile acidity | Amount of volatile acids |
+| citric acid | Citric acid content |
+| residual sugar | Amount of residual sugar |
+| chlorides | Chloride concentration |
+| free sulfur dioxide | Free sulfur dioxide content |
+| total sulfur dioxide | Total sulfur dioxide content |
+| density | Density of the wine |
+| pH | Acidity or alkalinity level |
+| sulphates | Sulphate concentration |
+| alcohol | Alcohol percentage |
+| quality | Wine quality score (target variable) |
+
+## 🛠️ Technologies & Tools Used
+
+- **Python** – Programming language
+- **VS Code** – Development environment
+- **JupyterLab** – Interactive notebook environment
+- **Pandas** – Data manipulation and analysis
+- **NumPy** – Numerical operations
+- **Matplotlib** – Data visualization
+- **Seaborn** – Statistical visualization
+- **Scikit-learn** – Machine Learning algorithms and evaluation
+
+## ⚙️ Installation & Setup
+
+### Step 1: Install Python
+
+Download Python from:
+
+https://www.python.org/downloads/
+
+### Step 2: Install VS Code
+
+Download Visual Studio Code:
+
+https://code.visualstudio.com/
+
+### Step 3: Install Required Libraries
+
+Open Command Prompt or VS Code terminal and execute:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyterlab
+```
+
+### Step 4: Launch JupyterLab
+
+Run the following command:
+
+```bash
+python -m jupyterlab
+```
+
+Alternatively:
+
+```bash
+jupyter lab
+```
+
+### Step 5: Run the Project
+
+1. Open your project folder in VS Code.
+2. Launch JupyterLab.
+3. Open the Wine Quality Prediction notebook.
+4. Make sure `winequality-red.csv` is available in the correct directory.
+5. Execute the notebook cells sequentially.
+
+## 🔍 Project Workflow
+
+### 1. Data Loading and Exploration
+
+- Imported Pandas and NumPy.
+- Loaded the Red Wine Quality dataset.
+- Examined dataset dimensions and column names.
+- Checked data types and statistical information.
+
+### 2. Data Inspection
+
+- Checked missing values.
+- Examined numerical data types.
+- Analyzed wine quality score distribution.
+- Identified class imbalance in the target variable.
+
+### 3. Exploratory Data Analysis (EDA)
+
+Performed the following visualizations:
+
+- Wine quality distribution count plot.
+- Chemical feature distribution histograms.
+- Correlation heatmap.
+- Quality category distribution plot.
+
+### 4. Quality Categorization
+
+Converted numerical wine quality scores into three categories:
+
+| Quality Score | Category |
+|---|---|
+| 3–4 | Low |
+| 5–6 | Medium |
+| 7–8 | High |
+
+This categorization transforms the original numerical quality scores into a multiclass classification problem.
+
+### 5. Feature Selection
+
+- Selected 11 physicochemical features as input variables.
+- Used `quality_category` as the target variable.
+- Excluded the original quality score from the input features.
+
+### 6. Train-Test Split
+
+- Divided the dataset into training and testing sets.
+- Used 80% of the data for training.
+- Used 20% of the data for testing.
+- Applied stratified sampling to maintain class distribution.
+- Used `random_state=42`.
+
+### 7. Machine Learning Model Building
+
+Implemented three classification algorithms:
+
+**Random Forest Classifier**
+- Used 100 decision trees.
+- Applied balanced class weights.
+- Used the model to classify wine quality categories.
+
+**SGD Classifier**
+- Applied StandardScaler for feature scaling.
+- Used Stochastic Gradient Descent.
+- Applied balanced class weights.
+
+**Support Vector Classifier (SVC)**
+- Used an RBF kernel.
+- Applied StandardScaler.
+- Used balanced class weights.
+
+### 8. Model Evaluation
+
+Evaluated the models using:
+
+- Accuracy Score
+- Precision Score
+- Recall Score
+- F1 Score
+- Confusion Matrix
+- Classification Report
+
+Macro-averaged Precision, Recall, and F1 Score were used to compare performance across all three quality categories.
+
+## 📊 Model Performance Comparison
+
+The following results were obtained from the notebook:
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|---|---:|---:|---:|---:|
+| Random Forest | 83.75% | 57.09% | 57.04% | 55.06% |
+| SGD Classifier | 77.81% | 48.49% | 48.00% | 47.89% |
+| SVC | 70.94% | 47.12% | 56.74% | 48.92% |
+
+<text weight="semibold">Best Performing Model: Random Forest Classifier</text>
+
+- Accuracy: 83.75%
+- Macro Precision: 57.09%
+- Macro Recall: 57.04%
+- Macro F1 Score: 55.06%
+
+## 📈 Visualizations
+
+The project includes the following visualizations:
+
+- Wine quality score distribution.
+- Chemical feature distribution histograms.
+- Correlation heatmap.
+- Quality category distribution.
+- Confusion matrices for all three models.
+- Random Forest feature importance chart.
+- Model performance comparison chart.
+
+## 💡 Key Findings & Insights
+
+- The dataset contains 1,599 red wine samples and 12 columns.
+- Medium-quality wine represents approximately 82.45% of the dataset after categorization.
+- Low-quality wine represents approximately 3.94% of the dataset.
+- High-quality wine represents approximately 13.57% of the dataset.
+- Alcohol has the strongest positive correlation with the original quality score (0.4762).
+- Volatile acidity has the strongest negative correlation with quality (-0.3906).
+- Volatile acidity, sulphates, and alcohol are the three most important features according to the Random Forest model.
+- Random Forest achieved the highest accuracy and macro F1 Score among the three tested models.
+
+## 🏆 Conclusion
+
+The project successfully demonstrates how Machine Learning classification algorithms can be used to predict wine quality categories based on physicochemical properties.
+
+Among the three implemented models, Random Forest performed best, achieving 83.75% accuracy and a macro F1 Score of 55.06%.
+
+However, the dataset has an imbalanced target distribution, and the lower performance on the Low-quality category indicates that minority-class prediction remains a challenge.
+
+## 📁 Project Structure
+
+```text
+OIBSIP-Wine-Quality-Prediction/
+│
+├── winequality-red.csv
+│
+├── OIBSIP-Data Analytics-L2-Task 2-Wine Quality Prediction.ipynb
+│
+└── README.md
+```
+
+## 🎓 Learning Outcomes
+
+- Gained practical experience in Machine Learning.
+- Learned Exploratory Data Analysis techniques.
+- Understood multiclass classification.
+- Practiced data visualization using Matplotlib and Seaborn.
+- Learned feature selection and correlation analysis.
+- Implemented Random Forest, SGD, and SVC classifiers.
+- Learned model evaluation using classification metrics.
+- Understood the impact of class imbalance on model performance.
+
+## 👩‍💻 Author
+
+**Tanushree Adsule**
+
+Data Analytics Intern
+
+## 🏢 Internship Details
+
+- **Organization:** Oasis Infobyte
+- **Domain:** Data Analytics
+- **Level:** Level 2
+- **Task:** Task 2 – Wine Quality Prediction
+
+---
+
+⭐ Thank you for visiting my project repository!
