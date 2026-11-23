@@ -1,0 +1,206 @@
+# 🧹 Retail Sales Dataset Cleaning Using Python
+
+## 📌 Project Overview
+
+This project focuses on cleaning and preprocessing a messy retail sales dataset using Python. The main objective is to identify and handle missing values, duplicate records, inconsistent data formats, invalid entries, and outliers to improve data quality and prepare the dataset for further analysis.
+
+This project is completed as part of the **Oasis Infobyte Internship (OIBSIP) – Data Analytics Task 2: Data Cleaning**.
+
+## 🎯 Project Objectives
+
+- Understand and inspect the messy retail sales dataset.
+- Identify missing values and duplicate records.
+- Detect invalid and inconsistent data entries.
+- Handle missing values using appropriate imputation techniques.
+- Remove duplicate records.
+- Standardize categorical data.
+- Convert columns into appropriate data types.
+- Detect and handle outliers.
+- Export the cleaned dataset into a CSV file.
+
+## 📂 Dataset Information
+
+**Dataset Name:** `messy_retail_sales_dataset.csv`
+
+The dataset contains retail transaction and customer information.
+
+### Dataset Columns
+
+| Column Name | Description |
+|---|---|
+| Order_ID | Unique order identification |
+| Order_Date | Date of the order |
+| Customer_Name | Name of the customer |
+| Age | Customer age |
+| Gender | Customer gender |
+| City | Customer's city |
+| Product | Purchased product |
+| Category | Product category |
+| Quantity | Number of products purchased |
+| Unit_Price | Price per unit |
+| Discount | Discount applied |
+| Total_Amount | Total transaction amount |
+| Payment_Method | Mode of payment |
+| Order_Status | Status of the order |
+| Customer_Email | Customer email address |
+
+## 🛠️ Technologies & Tools Used
+
+- **Python** – Programming language
+- **VS Code** – Development environment
+- **JupyterLab** – Interactive notebook environment
+- **Pandas** – Data cleaning and manipulation
+- **NumPy** – Numerical operations
+- **Matplotlib** – Data visualization
+
+## ⚙️ Installation & Setup
+
+### Step 1: Install Python
+
+Download Python from:
+
+https://www.python.org/downloads/
+
+### Step 2: Install VS Code
+
+Download Visual Studio Code:
+
+https://code.visualstudio.com/
+
+### Step 3: Install Required Libraries
+
+Open Command Prompt or the VS Code terminal and run:
+
+```bash
+pip install pandas numpy matplotlib jupyterlab
+```
+
+### Step 4: Launch JupyterLab
+
+Run the following command in Command Prompt:
+
+```bash
+python -m jupyterlab
+```
+
+Alternatively, use:
+
+```bash
+jupyter lab
+```
+
+JupyterLab will open in your default web browser.
+
+### Step 5: Run the Project
+
+1. Open your project folder in VS Code.
+2. Launch JupyterLab.
+3. Open the Task 2 Jupyter Notebook.
+4. Ensure the original CSV dataset is available in the correct folder.
+5. Execute the notebook cells sequentially.
+
+## 🔍 Data Cleaning Process
+
+### 1. Data Inspection
+- Loaded the dataset using Pandas.
+- Checked dataset dimensions and column names.
+- Examined data types and dataset information.
+
+### 2. Missing Value Detection
+- Identified missing values in different columns.
+- Calculated missing value counts and percentages.
+
+### 3. Duplicate Detection
+- Identified duplicate records.
+- Removed duplicate rows using `drop_duplicates()`.
+
+### 4. Handling Missing Values
+Applied different techniques:
+
+- **Mean Imputation:** Used for the Age column.
+- **Median Imputation:** Used for the Unit_Price column.
+- **Mode Imputation:** Used for categorical columns.
+- **Forward Fill:** Used for the Discount column.
+- **Row Deletion:** Removed records missing important values such as Quantity, Total_Amount, and Customer_Email.
+
+### 5. Data Standardization
+- Standardized Gender values.
+- Removed unnecessary spaces.
+- Converted City, Product, Category, and Payment_Method values into consistent formats.
+- Standardized Order_Status values.
+
+### 6. Data Type Correction
+- Converted Order_ID into string format.
+- Converted Order_Date into datetime format.
+- Converted Age and Quantity into integer formats.
+- Converted Unit_Price and Total_Amount into floating-point formats.
+
+### 7. Outlier Detection and Treatment
+- Used the Interquartile Range (IQR) method.
+- Identified outliers in numerical columns.
+- Created boxplots using Matplotlib.
+- Applied outlier capping to Unit_Price and Total_Amount.
+
+### 8. Exporting Cleaned Dataset
+Saved the final cleaned dataset as:
+
+`Cleaned_Retail_Sales_Dataset.csv`
+
+## 📊 Before and After Data Cleaning
+
+| Metrics | Before Cleaning | After Cleaning |
+|---|---:|---:|
+| Total Rows | 123 | 47 |
+| Missing Values | 271 | 0 |
+| Duplicate Rows | 3 | 0 |
+
+**Result:** The dataset was reduced from 123 records to 47 records after missing-value handling and duplicate removal.
+
+## 💡 Key Outcomes
+
+- Successfully identified 271 missing values.
+- Handled missing values using different imputation techniques.
+- Removed 3 duplicate records.
+- Standardized inconsistent categorical values.
+- Identified invalid numerical entries.
+- Detected outliers using the IQR method.
+- Generated boxplots for numerical columns.
+- Exported the cleaned dataset into CSV format.
+- Verified that the exported dataset contains no missing values or duplicate rows.
+
+## 📁 Project Structure
+
+```text
+OIBSIP-Data-Analytics-Task-2/
+│
+├── Oasis Infobyte/
+│   └── messy_retail_sales_dataset.csv
+│
+├── OIBSIP-Data Analytics-Task 2 Cleaning Dataset.ipynb
+│
+├── Cleaned_Retail_Sales_Dataset.csv
+│
+└── README.md
+```
+
+## 🎓 Learning Outcomes
+
+- Gained practical experience in Python data cleaning.
+- Learned how to handle missing values and duplicates.
+- Understood different data imputation techniques.
+- Improved knowledge of Pandas and NumPy.
+- Learned data standardization and type conversion.
+- Understood outlier detection using the IQR method.
+- Gained experience in preparing datasets for further analysis.
+
+## 👩‍💻 Author
+
+**Tanushree Adsule**
+
+Data Analytics Intern
+
+## 🏢 Internship Details
+
+- **Organization:** Oasis Infobyte
+- **Domain:** Data Analytics
+- **Task:** Task 2 – Data Cleaning
